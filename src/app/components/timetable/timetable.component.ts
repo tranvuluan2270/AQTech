@@ -11,8 +11,6 @@ export class TimetableComponent implements OnInit {
 
   constructor(private Timetable:TimetableService){
     this.Timetable.getData().subscribe(data=>{
-      console.log(data);
-      
       this.data=data;
     })
   }

@@ -11,7 +11,6 @@ export class ExamScheduleComponent implements OnInit {
 
   constructor(private ExamSchedule:ExamScheduleService){
     this.ExamSchedule.getData().subscribe(data=>{
-      
       this.data=data;
     })
   }
