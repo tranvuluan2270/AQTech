@@ -4,13 +4,13 @@ import {HttpClient} from '@angular/common/http';
 @Injectable({
   providedIn: 'root'
 })
-export class ExamScheduleService {
+export class TimetableService {
 
   constructor(private http:HttpClient) { }
 
- getData()
- {
-   let url = `/aq/lichthisv/{mssv:"BA20EX003",nhhk:"20201"}`;
-   return this.http.get(url);
- }
+  getData()
+  {
+    let url = `/aq/tkbtuansv/{mssv:"BA20EX003",tu_ngay:"2020-10-05"}`;
+    return this.http.get(url);
+  }
 }

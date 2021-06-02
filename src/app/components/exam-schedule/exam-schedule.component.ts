@@ -6,10 +6,13 @@ import {ExamScheduleService} from '../../services/exam-schedule/exam-schedule.se
   styleUrls: ['./exam-schedule.component.css']
 })
 export class ExamScheduleComponent implements OnInit {
+  
+  data:any=[]
 
   constructor(private ExamSchedule:ExamScheduleService){
     this.ExamSchedule.getData().subscribe(data=>{
-      console.log(data);
+      
+      this.data=data;
     })
   }
 

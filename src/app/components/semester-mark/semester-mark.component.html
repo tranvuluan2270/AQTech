@@ -1,1 +1,37 @@
-<p>semester-mark works!</p>
+<div class="table">
+    <table class="table table-sm caption-top table-info table-bordered">
+        <caption>Điểm 1 Học Kỳ</caption>
+        <thead class="table-dark">
+        <tr>
+            <th scope="col">Mã Môn Học</th>
+            <th scope="col">Tên Môn Học</th>
+            <th scope="col">Số Tín Chỉ</th>
+            <th scope="col">Điểm Kiểm Tra 1</th>
+            <th scope="col">Điểm Kiểm Tra 2</th>
+            <th scope="col">Điểm Thi</th>
+            <th scope="col">Loại</th>
+            <th scope="col">Điểm Hệ Số 4</th>
+            <th scope="col">Đạt Môn</th>
+
+        </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of data">
+            <th scope="row">{{item.ma_mon_hoc}}</th>
+            <td>{{item.ten_mon_hoc}}</td>
+            <td>{{item.so_tc}}</td>
+            <td>{{item.diem_kt_1}}</td>
+            <td>{{item.diem_kt_2}}</td>
+            <td>{{item.diem_thi}}</td>
+            <td>{{item.loai}}</td>
+            <td>{{item.diem_he_so_4}}</td>
+            <td>{{item.dat_mon}}</td>
+        </tr>     
+        </tbody>  
+        <tfoot></tfoot>     
+    </table>
+</div>
+
+
+
+

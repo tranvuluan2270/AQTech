@@ -1,1 +1,45 @@
-<p>timetable works!</p>
+<div class="table">
+    <table class="table table-sm caption-top table-info table-bordered">
+        <caption>Thời Khỏa Biểu Dạng Tuần</caption>
+        <thead class="table-dark">
+        <tr>
+            <th scope="col">Thứ</th>
+            <th scope="col">Tiết</th>
+            <th scope="col">Tên Môn Học</th>
+            <th scope="col">Mã Môn Học</th>
+            <th scope="col">Tên Phòng</th>
+            <th scope="col">Mã Phòng</th>
+            <th scope="col">Lớp</th>
+            <th scope="col">Ngày Học</th>
+            <th scope="col">Năm Học</th>
+            <th scope="col">Học Kỳ</th>
+            <th scope="col">Số Tín Chỉ</th>
+            <th scope="col">Số Tín Chỉ Học Phần</th>
+            <th scope="col">Nhóm Học</th>
+            <th scope="col">Nhóm Thực Hành</th>
+        </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of data">
+            <th scope="row">{{item.thu}}</th>
+            <td>{{item.tiet}}</td>
+            <td>{{item.ten_mon_hoc}}</td>
+            <td>{{item.ma_mon_hoc}}</td>
+            <td>{{item.ten_phong}}</td>
+            <td>{{item.ma_phong}}</td>
+            <td>{{item.lop}}</td>
+            <td>{{item.ngay_hoc}}</td>
+            <td>{{item.nam_hoc}}</td>
+            <td>{{item.hoc_ky}}</td>
+            <td>{{item.so_tc}}</td>
+            <td>{{item.so_tc_hp}}</td>
+            <td>{{item.nhom_hoc}}</td>
+            <td>{{item.nhom_thuc_hanh}}</td>
+        </tr>     
+        </tbody>  
+        <tfoot></tfoot>     
+    </table>
+</div>
+
+
+

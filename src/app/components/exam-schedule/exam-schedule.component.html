@@ -1,1 +1,40 @@
-<p>exam-schedule works!</p>
+<div class="table">
+    <table class="table table-sm caption-top table-info  table-bordered">
+        <caption>Lịch Thi</caption>
+        <thead class="table-dark">
+        <tr>
+            <th scope="col">Mã Môn Học</th>
+            <th scope="col">Tên Môn Học</th>
+            <th scope="col">Mã Phòng</th>
+            <th scope="col">Tên Phòng</th>
+            <th scope="col">Giờ Bắt Đầu</th>
+            <th scope="col">Số Phút</th>
+            <th scope="col">Tiết Bắt Đầu</th>
+            <th scope="col">Số Tiết</th>
+            <th scope="col">Hình Thức</th>
+            <th scope="col">Tổ Thi</th>
+            <th scope="col">Nhóm Thi</th>
+            <th scope="col">Ngày Thi</th>
+        </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of data">
+            <th scope="row">{{item.ma_mon_hoc}}</th>
+            <td>{{item.ten_mon_hoc}}</td>
+            <td>{{item.ma_phong}}</td>
+            <td>{{item.ten_phong}}</td>
+            <td>{{item.gio_bat_dau}}</td>
+            <td>{{item.so_phut}}</td>
+            <td>{{item.tiet_bat_dau}}</td>
+            <td>{{item.so_tiet}}</td>
+            <td>{{item.hinh_thuc}}</td>
+            <td>{{item.to_thi}}</td>
+            <td>{{item.nhom_thi}}</td>
+            <td>{{item.ngay_thi}}</td>   
+        </tr>     
+        </tbody>  
+        <tfoot></tfoot>     
+    </table>
+</div>
+
+

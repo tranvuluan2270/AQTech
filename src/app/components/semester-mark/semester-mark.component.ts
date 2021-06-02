@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { SemesterMarkService } from 'src/app/services/semester-mark/semester-mark.service';
+
 
 @Component({
   selector: 'app-semester-mark',
@@ -6,8 +8,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./semester-mark.component.css']
 })
 export class SemesterMarkComponent implements OnInit {
+  
+  data:any=[];
 
-  constructor() { }
+  constructor(private SemesterMark:SemesterMarkService){
+    this.SemesterMark.getData().subscribe(data=>{
+      this.data=data;
+    })
+  }
 
   ngOnInit(): void {
   }
