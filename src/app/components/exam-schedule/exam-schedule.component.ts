@@ -14,10 +14,7 @@ export class ExamScheduleComponent implements OnInit {
     let Nhhk = value.nhhk;
 
     this.ExamSchedule.getData(Mssv,Nhhk).subscribe(data=>{
-    this.data=data;
-    console.log(value)
-    
-    
+    this.data=data;  
     })
   }
 

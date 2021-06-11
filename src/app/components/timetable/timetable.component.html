@@ -30,18 +30,18 @@
         </form>
     </div>
 
-        <div class="input-alert">
-            <div *ngIf="mssv.errors && (mssv.dirty || mssv.touched)" id="alert-mssv" class="alert alert-danger" role="alert">
-                <div [hidden]="!mssv.errors.required">
-                    Chưa nhập MSSV
-                </div>
+    <div class="input-alert">
+        <div *ngIf="mssv.errors && (mssv.dirty || mssv.touched)" id="alert-mssv" class="alert alert-danger" role="alert">
+            <div [hidden]="!mssv.errors.required">
+                Chưa nhập MSSV
             </div>
+        </div>
 
-            <div *ngIf="date.errors && (date.dirty || date.touched)" id="alert-nhhk" class="alert alert-danger" role="alert">
-                <div [hidden]="!date.errors.required">
-                    Chưa chọn ngày
-                </div>
+        <div *ngIf="date.errors && (date.dirty || date.touched)" id="alert-nhhk" class="alert alert-danger" role="alert">
+            <div [hidden]="!date.errors.required">
+                Chưa chọn ngày
             </div>
+        </div>
     </div>
 
 <div class="table">

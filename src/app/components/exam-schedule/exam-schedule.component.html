@@ -31,18 +31,17 @@
     </div>
 
     <div class="input-alert">
-            <div *ngIf="mssv.errors && (mssv.dirty || mssv.touched)" id="alert-mssv" class="alert alert-danger" role="alert">
-                <div [hidden]="!mssv.errors.required">
-                    Chưa nhập MSSV
-                </div>
+        <div *ngIf="mssv.errors && (mssv.dirty || mssv.touched)" id="alert-mssv" class="alert alert-danger" role="alert">
+            <div [hidden]="!mssv.errors.required">
+                Chưa nhập MSSV
             </div>
+        </div>
 
-            <div *ngIf="nhhk.errors && (nhhk.dirty || nhhk.touched)" id="alert-nhhk" class="alert alert-danger" role="alert">
-                <div [hidden]="!nhhk.errors.required">
-                    Chưa nhập NHHK
-                </div>
+        <div *ngIf="nhhk.errors && (nhhk.dirty || nhhk.touched)" id="alert-nhhk" class="alert alert-danger" role="alert">
+            <div [hidden]="!nhhk.errors.required">
+                Chưa nhập NHHK
             </div>
-            
+        </div> 
     </div>
 
 
