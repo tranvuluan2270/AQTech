@@ -3,19 +3,30 @@ import {ExamScheduleService} from '../../services/exam-schedule/exam-schedule.se
 @Component({
   selector: 'app-exam-schedule',
   templateUrl: './exam-schedule.component.html',
-  styleUrls: ['./exam-schedule.component.css']
+  styleUrls: ['../../app.component.css']
 })
 export class ExamScheduleComponent implements OnInit {
   
-  data:any=[]
+  data:any;
+  getInputs(value:any)
+  {
+    let Mssv = value.mssv;
+    let Nhhk = value.nhhk;
 
-  constructor(private ExamSchedule:ExamScheduleService){
-    this.ExamSchedule.getData().subscribe(data=>{
-      this.data=data;
+    this.ExamSchedule.getData(Mssv,Nhhk).subscribe(data=>{
+    this.data=data;
+    console.log(value)
+    
+    
     })
   }
 
+  constructor(private ExamSchedule:ExamScheduleService){
+
+  }
+
   ngOnInit(): void {
+
   }
 
 }

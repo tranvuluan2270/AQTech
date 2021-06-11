@@ -1,40 +1,88 @@
-<div class="table">
-    <table class="table table-sm caption-top table-info  table-bordered">
-        <caption>Lịch Thi</caption>
-        <thead class="table-dark">
-        <tr>
-            <th scope="col">Mã Môn Học</th>
-            <th scope="col">Tên Môn Học</th>
-            <th scope="col">Mã Phòng</th>
-            <th scope="col">Tên Phòng</th>
-            <th scope="col">Giờ Bắt Đầu</th>
-            <th scope="col">Số Phút</th>
-            <th scope="col">Tiết Bắt Đầu</th>
-            <th scope="col">Số Tiết</th>
-            <th scope="col">Hình Thức</th>
-            <th scope="col">Tổ Thi</th>
-            <th scope="col">Nhóm Thi</th>
-            <th scope="col">Ngày Thi</th>
-        </tr>
-        </thead>
-        <tbody>
-          <tr *ngFor="let item of data">
-            <th scope="row">{{item.ma_mon_hoc}}</th>
-            <td>{{item.ten_mon_hoc}}</td>
-            <td>{{item.ma_phong}}</td>
-            <td>{{item.ten_phong}}</td>
-            <td>{{item.gio_bat_dau}}</td>
-            <td>{{item.so_phut}}</td>
-            <td>{{item.tiet_bat_dau}}</td>
-            <td>{{item.so_tiet}}</td>
-            <td>{{item.hinh_thuc}}</td>
-            <td>{{item.to_thi}}</td>
-            <td>{{item.nhom_thi}}</td>
-            <td>{{item.ngay_thi}}</td>   
-        </tr>     
-        </tbody>  
-        <tfoot></tfoot>     
-    </table>
+<div class="container">
+    
+    <div class="inputs">
+        <form class="row" #Form="ngForm" (ngSubmit)="getInputs(Form.value)">
+            <div class="col">    
+                <input 
+                class="form-control form-control-sm" 
+                ngModel 
+                #mssv="ngModel"
+                type="text" 
+                name="mssv" 
+                placeholder="Nhập MSSV" 
+                required>
+            </div>
+
+            <div class="col">
+                <input 
+                class="form-control form-control-sm" 
+                ngModel
+                #nhhk="ngModel" 
+                type="text" 
+                name="nhhk" 
+                placeholder="Nhập NHHK" 
+                required>
+            </div>
+
+            <div class="col">
+                <button type="submit" [disabled]="Form.invalid" class="btn btn-success btn-sm">Xem Lịch Thi</button>
+            </div>
+        </form>
+    </div>
+
+    <div class="input-alert">
+            <div *ngIf="mssv.errors && (mssv.dirty || mssv.touched)" id="alert-mssv" class="alert alert-danger" role="alert">
+                <div [hidden]="!mssv.errors.required">
+                    Chưa nhập MSSV
+                </div>
+            </div>
+
+            <div *ngIf="nhhk.errors && (nhhk.dirty || nhhk.touched)" id="alert-nhhk" class="alert alert-danger" role="alert">
+                <div [hidden]="!nhhk.errors.required">
+                    Chưa nhập NHHK
+                </div>
+            </div>
+            
+    </div>
+
+
+    <div class="table">
+        <table class="table table-sm caption-top table-info  table-bordered">
+            <caption>Lịch Thi</caption>
+            <thead class="table-dark">
+            <tr>
+                <th scope="col">Mã Môn Học</th>
+                <th scope="col">Tên Môn Học</th>
+                <th scope="col">Mã Phòng</th>
+                <th scope="col">Tên Phòng</th>
+                <th scope="col">Giờ Bắt Đầu</th>
+                <th scope="col">Số Phút</th>
+                <th scope="col">Tiết Bắt Đầu</th>
+                <th scope="col">Số Tiết</th>
+                <th scope="col">Hình Thức</th>
+                <th scope="col">Tổ Thi</th>
+                <th scope="col">Nhóm Thi</th>
+                <th scope="col">Ngày Thi</th>
+            </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let item of data">
+                <th scope="row">{{item.ma_mon_hoc}}</th>
+                <td>{{item.ten_mon_hoc}}</td>
+                <td>{{item.ma_phong}}</td>
+                <td>{{item.ten_phong}}</td>
+                <td>{{item.gio_bat_dau}}</td>
+                <td>{{item.so_phut}}</td>
+                <td>{{item.tiet_bat_dau}}</td>
+                <td>{{item.so_tiet}}</td>
+                <td>{{item.hinh_thuc}}</td>
+                <td>{{item.to_thi}}</td>
+                <td>{{item.nhom_thi}}</td>
+                <td>{{item.ngay_thi}}</td>   
+            </tr>     
+            </tbody>  
+            <tfoot></tfoot>     
+        </table>
+
+    </div>
 </div>
-
-

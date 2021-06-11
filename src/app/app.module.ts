@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { ExamScheduleComponent } from './components/exam-schedule/exam-schedule.component';
 import { TimetableComponent } from './components/timetable/timetable.component';
 import { SemesterMarkComponent } from './components/semester-mark/semester-mark.component';
+import { FormsModule } from '@angular/forms'
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { SemesterMarkComponent } from './components/semester-mark/semester-mark.
       {path: 'timetable', component: TimetableComponent},
       {path: 'semester-mark', component: SemesterMarkComponent},
     ]),
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,3 +1,49 @@
+<div class="container">
+    
+    <div class="inputs">
+        <form class="row" #Form="ngForm" (ngSubmit)="getInputs(Form.value)" >
+            <div class="col">    
+                <input 
+                class="form-control form-control-sm" 
+                ngModel 
+                #mssv="ngModel"
+                type="text" 
+                name="mssv" 
+                placeholder="Nhập MSSV" 
+                required>
+            </div>
+
+            <div class="col">
+                <input 
+                class="form-control form-control-sm" 
+                ngModel
+                #nhhk="ngModel" 
+                type="text" 
+                name="nhhk" 
+                placeholder="Nhập NHHK" 
+                required>
+            </div>
+
+            <div class="col">
+                <button type="submit" [disabled]="Form.invalid" class="btn btn-success btn-sm">Xem Điểm</button>
+            </div>
+        </form>
+    </div>
+
+    <div class="input-alert">
+        <div *ngIf="mssv.errors && (mssv.dirty || mssv.touched)" id="alert-mssv" class="alert alert-danger" role="alert">
+            <div [hidden]="!mssv.errors.required">
+                Chưa nhập MSSV
+            </div>
+        </div>
+        
+        <div *ngIf="nhhk.errors && (nhhk.dirty || nhhk.touched)" id="alert-nhhk" class="alert alert-danger" role="alert">
+            <div [hidden]="!nhhk.errors.required">
+                Chưa nhập NHHK
+            </div>
+        </div>
+    </div>
+
 <div class="table">
     <table class="table table-sm caption-top table-info table-bordered">
         <caption>Điểm 1 Học Kỳ</caption>

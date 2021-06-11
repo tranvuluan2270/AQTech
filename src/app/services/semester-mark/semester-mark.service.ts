@@ -8,9 +8,9 @@ export class SemesterMarkService {
 
   constructor(private http:HttpClient) { }
 
- getData()
- {
-   let url = `/aq/diemhksv/{mssv:"BA20EX003",nhhk:"20191"}`;
-   return this.http.get(url);
- }
+  getData(mssv:string,nhhk:string)
+  {
+    let url = `/aq/diemhksv/{mssv:"${mssv}",nhhk:"${nhhk}"}`;
+    return this.http.get(url);
+  }
 }

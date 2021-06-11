@@ -8,9 +8,9 @@ export class TimetableService {
 
   constructor(private http:HttpClient) { }
 
-  getData()
+  getData(mssv:string,date:string)
   {
-    let url = `/aq/tkbtuansv/{mssv:"BA20EX003",tu_ngay:"2020-10-05"}`;
+    let url = `/aq/tkbtuansv/{mssv:"${mssv}",tu_ngay:"${date}"}`;
     return this.http.get(url);
   }
 }
