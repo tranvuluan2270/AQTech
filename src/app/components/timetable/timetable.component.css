@@ -1,0 +1,134 @@
+.inputs {
+  background-color: #f5f5f5;
+  background-image: linear-gradient(to top, #ffffff, #e2e2e2);
+  border-bottom: 1px solid #ccc;
+  border-bottom-left-radius: 24px;
+  border-bottom-right-radius: 24px;
+  box-shadow: 1px 1px 1px #888888;
+  width: 70%;
+  height: 50px;
+  padding: 30px;
+  margin: 0 auto;
+}
+.inputs #mssv {
+  width: 15%;
+  margin: 0 2px;
+}
+.inputs #hk {
+  width: 30%;
+  margin: 0 2px;
+}
+.inputs #tuan {
+  width: 40%;
+  margin: 0 2px;
+}
+.inputs button {
+  margin: 5px;
+  padding: 0 5px;
+  width: 12%;
+  height: 20px;
+  font-size: small;
+}
+
+.input-alert {
+  margin: 5px 0 5px 0;
+  display: flex;
+  text-align: center;
+  height: 35px;
+}
+#alert-mssv {
+  position: absolute;
+  margin: 5px auto 5px 14%;
+  padding: 0;
+  width: 130px;
+  height: 20px;
+  font-size: small;
+}
+#alert-nhhk {
+  position: absolute;
+  margin: 5px auto 5px 22.8%;
+  padding: 0px;
+  width: 261px;
+  height: 20px;
+  font-size: small;
+}
+#alert-tuan {
+  position: absolute;
+  margin: 5px auto 5px 40%;
+  padding: 0px;
+  width: 348px;
+  height: 20px;
+  font-size: small;
+}
+.ng-valid[required],
+.ng-valid.required {
+  border-bottom: 3px solid #42a948;
+}
+.ng-invalid:not(form) {
+  border-bottom: 3px solid #a94442;
+}
+
+.timetable {
+  font-size: 10pt;
+  font-weight: bold;
+  text-align: center;
+  width: 100%;
+  height: 100%;
+  margin: 30px auto;
+}
+.edge {
+  border-style: none;
+  background: linear-gradient(to right, #e44d26, #f16529);
+  padding: 0;
+}
+.top-left {
+  border-top-left-radius: 50%;
+}
+.top-right {
+  border-top-right-radius: 50%;
+}
+.bottom-left {
+  border-bottom-left-radius: 50%;
+}
+.bottom-right {
+  border-bottom-right-radius: 50%;
+}
+
+._row {
+  display: table-row;
+}
+._date {
+  background: linear-gradient(to top, #00c6ff, #0072ff);
+  color: white;
+  text-shadow: 0 1px 0 #0072ff;
+  border: solid 2px #dee2e6;
+  font-size: 12pt;
+  white-space: nowrap;
+  width: 150px;
+  height: 30px;
+  padding: 0;
+}
+._period {
+  background: linear-gradient(to left, #e44d26, #f16529);
+  color: white;
+  border: solid 2px #dee2e6;
+  width: 80px;
+  height: 30px;
+  padding: 0;
+}
+._content {
+  border: solid 1px lightgray;
+  width: 150px;
+  height: 30px;
+  padding: 0;
+}
+#block {
+  background-image: linear-gradient(to right, #ffffff, #e2e2e2);
+}
+._text {
+  text-align: left;
+  font-size: 8.5pt;
+  letter-spacing: 0.5px;
+  width: 130px;
+  color: teal;
+}

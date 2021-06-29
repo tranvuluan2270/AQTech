@@ -5,18 +5,19 @@ import { SemesterMarkService } from 'src/app/services/semester-mark/semester-mar
 @Component({
   selector: 'app-semester-mark',
   templateUrl: './semester-mark.component.html',
-  styleUrls: ['../../app.component.css']
+  styleUrls: ['./semester-mark.component.css']
 })
 export class SemesterMarkComponent implements OnInit {
   
   data:any=[];
+
   getInputs(value:any)
   {
     let Mssv = value.mssv;
     let Nhhk = value.nhhk;
 
     this.SemesterMark.getData(Mssv,Nhhk).subscribe(data=>{
-    this.data=data;
+    this.data=data;   
     })
   }
 

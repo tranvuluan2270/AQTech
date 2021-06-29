@@ -1,91 +1,210 @@
-<div class="container">
-    
-    <div class="inputs">
-        <form class="row" #Form="ngForm" (ngSubmit)="getInputs(Form.value)">
-            <div class="col">    
-                <input 
-                class="form-control form-control-sm" 
-                ngModel 
-                #mssv="ngModel"
-                type="text" 
-                name="mssv" 
-                placeholder="Nhập MSSV" 
-                required>
-            </div>
-
-            <div class="col">
-                <input 
-                class="form-control form-control-sm" 
-                ngModel
-                #date="ngModel" 
-                type="date" 
-                name="date" 
-                placeholder="Chọn ngày" 
-                required>
-            </div>
-
-            <div class="col">
-                <button type="submit" [disabled]="Form.invalid" class="btn btn-success btn-sm">Xem TKB</button>
-            </div>
-        </form>
-    </div>
-
-    <div class="input-alert">
-        <div *ngIf="mssv.errors && (mssv.dirty || mssv.touched)" id="alert-mssv" class="alert alert-danger" role="alert">
-            <div [hidden]="!mssv.errors.required">
-                Chưa nhập MSSV
-            </div>
-        </div>
-
-        <div *ngIf="date.errors && (date.dirty || date.touched)" id="alert-nhhk" class="alert alert-danger" role="alert">
-            <div [hidden]="!date.errors.required">
-                Chưa chọn ngày
-            </div>
-        </div>
-    </div>
-
-<div class="table">
-    <table class="table table-sm caption-top table-info table-bordered">
-        <caption>Thời Khỏa Biểu Dạng Tuần</caption>
-        <thead class="table-dark">
-        <tr>
-            <th scope="col">Thứ</th>
-            <th scope="col">Tiết</th>
-            <th scope="col">Tên Môn Học</th>
-            <th scope="col">Mã Môn Học</th>
-            <th scope="col">Tên Phòng</th>
-            <th scope="col">Mã Phòng</th>
-            <th scope="col">Lớp</th>
-            <th scope="col">Ngày Học</th>
-            <th scope="col">Năm Học</th>
-            <th scope="col">Học Kỳ</th>
-            <th scope="col">Số Tín Chỉ</th>
-            <th scope="col">Số Tín Chỉ Học Phần</th>
-            <th scope="col">Nhóm Học</th>
-            <th scope="col">Nhóm Thực Hành</th>
-        </tr>
-        </thead>
-        <tbody>
-          <tr *ngFor="let item of data">
-            <th scope="row">{{item.thu}}</th>
-            <td>{{item.tiet}}</td>
-            <td>{{item.ten_mon_hoc}}</td>
-            <td>{{item.ma_mon_hoc}}</td>
-            <td>{{item.ten_phong}}</td>
-            <td>{{item.ma_phong}}</td>
-            <td>{{item.lop}}</td>
-            <td>{{item.ngay_hoc}}</td>
-            <td>{{item.nam_hoc}}</td>
-            <td>{{item.hoc_ky}}</td>
-            <td>{{item.so_tc}}</td>
-            <td>{{item.so_tc_hp}}</td>
-            <td>{{item.nhom_hoc}}</td>
-            <td>{{item.nhom_thuc_hanh}}</td>
-        </tr>     
-        </tbody>  
-        <tfoot></tfoot>     
-    </table>
+<div class="inputs">
+    <form class="row" #Form="ngForm" (ngSubmit)="getInputs(Form.value)">
+            <input
+            id="mssv" 
+            class="form-control form-control-sm" 
+            ngModel 
+            #mssv="ngModel"
+            type="text" 
+            name="mssv" 
+            placeholder="Nhập MSSV" 
+            required>
+        
+            <select
+            id="hk" 
+            class="form-select form-select-sm"
+            ngModel
+            #nhhk="ngModel"
+            name="nhhk"
+            required
+            (change)="updateWeeks(nhhk.value)">
+                <option value="" selected disabled>Chọn Học Kỳ</option>
+                <option *ngFor="let semester of semesters" [value]="semester.value">{{semester.placeholder}}</option>
+            </select>
+        
+            <select
+            id="tuan" 
+            class="form-select form-select-sm"
+            ngModel
+            #tungay="ngModel"
+            name="tungay"
+            required>
+                <option value="" selected disabled>Chọn Tuần</option>
+                <option *ngFor="let week of weeks" [value]="week.value">{{week.placeholder}}</option>
+            </select>
+            <button type="submit" [disabled]="Form.invalid" class="btn btn-success btn-sm">In TKB</button>
+    </form>
 </div>
 
+<div class="input-alert">
+    <div *ngIf="mssv.errors && (mssv.dirty || mssv.touched)" id="alert-mssv" class="alert alert-danger" role="alert">
+        <div [hidden]="!mssv.errors.required">
+            Chưa nhập mssv
+        </div>
+    </div>
+    <div *ngIf="nhhk.errors && (nhhk.dirty || nhhk.touched)" id="alert-nhhk" class="alert alert-danger" role="alert">
+        <div [hidden]="!nhhk.errors.required">
+            Chưa chọn học kỳ
+        </div>
+    </div>
+    <div *ngIf="tungay.errors && (tungay.dirty || tungay.touched)" id="alert-tuan" class="alert alert-danger" role="alert">
+        <div [hidden]="!tungay.errors.required">
+            Chưa chọn tuần
+        </div>
+    </div>
+</div>
 
-
+<table class="timetable">
+    <thead>
+        <tr class="_row">
+            <th class="edge top-left"></th>
+            <th class="_date" >THỨ HAI</th>
+            <th class="_date" >THỨ BA</th>
+            <th class="_date" >THỨ TƯ</th>
+            <th class="_date" >THỨ NĂM</th>
+            <th class="_date" >THỨ SÁU</th>
+            <th class="_date" >THỨ BẢY</th>
+            <th class="_date" >CHỦ NHẬT</th>
+            <th class="edge top-right" ></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr class="_row">
+            <td class="_period">Tiết 1</td>
+            <td id="block" class="_content" rowspan="" >
+                <table class="_text">   
+                        <tr>
+                            <td>
+                                <span>E-Logistics in Supply Chain Management</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <span style="font-weight: bold; color:#212529;">Phòng:</span>
+                                <span>A2.301</span>
+                            </td>
+                        </tr>
+                </table>
+            </td>
+            <td class="_content"></td>
+            <td class="_content"></td>
+            <td class="_content"></td>
+            <td class="_content"></td>
+            <td class="_content"></td>
+            <td class="_content"></td>
+            <td class="_period">Tiết 1</td>
+        </tr>
+        <tr class="_row">
+            <td class="_period">Tiết 2</td>
+            <td class="_content"></td>
+            <td class="_content"></td>
+            <td class="_content"></td>
+            <td class="_content"></td>
+            <td class="_content"></td>
+            <td class="_content"></td>
+            <td class="_content"></td>
+            <td class="_period">Tiết 2</td>
+        </tr>
+        <tr class="_row">
+            <td class="_period">Tiết 3</td>
+            <td class="_content"></td>
+            <td class="_content"></td>
+            <td class="_content"></td>
+            <td class="_content"></td>
+            <td class="_content"></td>
+            <td class="_content"></td>
+            <td class="_content"></td>
+            <td class="_period">Tiết 3</td>
+        </tr>
+        <tr class="_row">
+            <td class="_period">Tiết 4</td>
+            <td class="_content"></td>
+            <td class="_content"></td>
+            <td class="_content"></td>
+            <td class="_content"></td>
+            <td class="_content"></td>
+            <td class="_content"></td>
+            <td class="_content"></td>
+            <td class="_period">Tiết 4</td>
+        </tr>
+        <tr class="_row">
+            <td class="_period">Tiết 5</td>
+            <td class="_content"></td>
+            <td class="_content"></td>
+            <td class="_content"></td>
+            <td class="_content"></td>
+            <td class="_content"></td>
+            <td class="_content"></td>
+            <td class="_content"></td>
+            <td class="_period">Tiết 5</td>
+        </tr>
+        <tr class="_row">
+            <td class="_period">Tiết 6</td>
+            <td class="_content"></td>
+            <td class="_content"></td>
+            <td class="_content"></td>
+            <td class="_content"></td>
+            <td class="_content"></td>
+            <td class="_content"></td>
+            <td class="_content"></td>
+            <td class="_period">Tiết 6</td>
+        </tr>
+        <tr class="_row">
+            <td class="_period">Tiết 7</td>
+            <td class="_content"></td>
+            <td class="_content"></td>
+            <td class="_content"></td>
+            <td class="_content"></td>
+            <td class="_content"></td>
+            <td class="_content"></td>
+            <td class="_content"></td>
+            <td class="_period">Tiết 7</td>
+        </tr>
+        <tr class="_row">
+            <td class="_period">Tiết 8</td>
+            <td class="_content"></td>
+            <td class="_content"></td>
+            <td class="_content"></td>
+            <td class="_content"></td>
+            <td class="_content"></td>
+            <td class="_content"></td>
+            <td class="_content"></td>
+            <td class="_period">Tiết 8</td>
+        </tr>
+        <tr class="_row">
+            <td class="_period">Tiết 9</td>
+            <td class="_content"></td>
+            <td class="_content"></td>
+            <td class="_content"></td>
+            <td class="_content"></td>
+            <td class="_content"></td>
+            <td class="_content"></td>
+            <td class="_content"></td>
+            <td class="_period">Tiết 9</td>
+        </tr>
+        <tr class="_row">
+            <td class="_period">Tiết 10</td>
+            <td class="_content"></td>
+            <td class="_content"></td>
+            <td class="_content"></td>
+            <td class="_content"></td>
+            <td class="_content"></td>
+            <td class="_content"></td>
+            <td class="_content"></td>
+            <td class="_period">Tiết 10</td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr class="_row">
+            <td class="edge bottom-left"></td>
+            <td class="_date" >THỨ HAI</td>
+            <td class="_date" >THỨ BA</td>
+            <td class="_date" >THỨ TƯ</td>
+            <td class="_date" >THỨ NĂM</td>
+            <td class="_date" >THỨ SÁU</td>
+            <td class="_date" >THỨ BẢY</td>
+            <td class="_date" >CHỦ NHẬT</td>
+            <td class="edge bottom-right"></td>
+        </tr>
+    </tfoot>
+</table>
