@@ -5,9 +5,8 @@ import {HttpClient} from '@angular/common/http';
   providedIn: 'root'
 })
 export class SemesterMarkService {
-
-  constructor(private http:HttpClient) { }
-
+  constructor(private http:HttpClient) {}
+  
   getData(mssv:string,nhhk:string)
   {
     let url = `/aq/diemhksv/{mssv:"${mssv}",nhhk:"${nhhk}"}`;

@@ -5,7 +5,7 @@ import {HttpClient} from '@angular/common/http';
   providedIn: 'root'
 })
 export class TimetableService {
-  constructor(private http:HttpClient) { }
+  constructor(private http:HttpClient) {}
 
   getData(mssv:string,tungay:string)
   {
