@@ -6,30 +6,23 @@ import {ExamScheduleService} from '../../services/exam-schedule/exam-schedule.se
   styleUrls: ['./exam-schedule.component.css']
 })
 export class ExamScheduleComponent implements OnInit {
-  
-  data:any;
+  constructor(private ExamSchedule:ExamScheduleService){}
+  ngOnInit(): void {}
+
+  Data:any=[];
+  listData:any=[];
   semesters:any=[
     {placeholder:'Học kỳ 1 - Năm học 2020-2021', value:'20201'},
     {placeholder:'Học kỳ 2 - Năm học 2020-2021', value:'20202'}
   ]
-
 
   getInputs(value:any)
   {
     let Mssv = value.mssv;
     let Nhhk = value.nhhk;
 
-    this.ExamSchedule.getData(Mssv,Nhhk).subscribe(data=>{
-    this.data=data; 
+    this.ExamSchedule.getData(Mssv,Nhhk).subscribe(listData=>{
+    this.Data=listData; 
     })
   }
-
-  constructor(private ExamSchedule:ExamScheduleService){
-
-  }
-
-  ngOnInit(): void {
-
-  }
-
 }

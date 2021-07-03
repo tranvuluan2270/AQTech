@@ -51,16 +51,16 @@
         </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let item of data">
-            <th scope="row">{{item.ma_mon_hoc}}</th>
-            <td>{{item.ten_mon_hoc}}</td>
-            <td>{{item.so_tc}}</td>
-            <td>{{item.diem_kt_1}}</td>
-            <td>{{item.diem_kt_2}}</td>
-            <td>{{item.diem_thi}}</td>
-            <td>{{item.loai}}</td>
-            <td>{{item.diem_he_so_4}}</td>
-            <td>{{item.dat_mon}}</td>
+          <tr *ngFor="let data of listData">
+            <th scope="row">{{data.ma_mon_hoc}}</th>
+            <td>{{data.ten_mon_hoc}}</td>
+            <td>{{data.so_tc}}</td>
+            <td>{{data.diem_kt_1}}</td>
+            <td>{{data.diem_kt_2}}</td>
+            <td>{{data.diem_thi}}</td>
+            <td>{{data.loai}}</td>
+            <td>{{data.diem_he_so_4}}</td>
+            <td>{{data.dat_mon}}</td>
         </tr>     
         </tbody>   
     </table>

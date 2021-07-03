@@ -8,24 +8,19 @@ import { SemesterMarkService } from 'src/app/services/semester-mark/semester-mar
   styleUrls: ['./semester-mark.component.css']
 })
 export class SemesterMarkComponent implements OnInit {
-  
-  data:any=[];
+  constructor(private SemesterMark:SemesterMarkService){}
+  ngOnInit(): void {}
+
+  Data:any=[];
+  listData:any=[];
 
   getInputs(value:any)
   {
     let Mssv = value.mssv;
     let Nhhk = value.nhhk;
 
-    this.SemesterMark.getData(Mssv,Nhhk).subscribe(data=>{
-    this.data=data;   
+    this.SemesterMark.getData(Mssv,Nhhk).subscribe(listData=>{
+      this.Data=listData;
     })
   }
-
-  constructor(private SemesterMark:SemesterMarkService){
-    
-  }
-
-  ngOnInit(): void {
-  }
-
 }

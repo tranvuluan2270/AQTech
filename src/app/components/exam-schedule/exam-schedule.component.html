@@ -56,19 +56,19 @@
         </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let item of data">
-            <th scope="row">{{item.ma_mon_hoc}}</th>
-            <td>{{item.ten_mon_hoc}}</td>
-            <td>{{item.ma_phong}}</td>
-            <td>{{item.ten_phong}}</td>
-            <td>{{item.gio_bat_dau}}</td>
-            <td>{{item.so_phut}}</td>
-            <td>{{item.tiet_bat_dau}}</td>
-            <td>{{item.so_tiet}}</td>
-            <td>{{item.hinh_thuc}}</td>
-            <td>{{item.to_thi}}</td>
-            <td>{{item.nhom_thi}}</td>
-            <td>{{item.ngay_thi}}</td>   
+          <tr *ngFor="let data of listData">
+            <th scope="row">{{data.ma_mon_hoc}}</th>
+            <td>{{data.ten_mon_hoc}}</td>
+            <td>{{data.ma_phong}}</td>
+            <td>{{data.ten_phong}}</td>
+            <td>{{data.gio_bat_dau}}</td>
+            <td>{{data.so_phut}}</td>
+            <td>{{data.tiet_bat_dau}}</td>
+            <td>{{data.so_tiet}}</td>
+            <td>{{data.hinh_thuc}}</td>
+            <td>{{data.to_thi}}</td>
+            <td>{{data.nhom_thi}}</td>
+            <td>{{data.ngay_thi}}</td>   
         </tr>     
         </tbody>      
     </table>

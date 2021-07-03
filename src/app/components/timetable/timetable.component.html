@@ -54,156 +54,28 @@
     </div>
 </div>
 
-<table class="timetable">
+
+<table class="timetable" >
     <thead>
-        <tr class="_row">
+        <tr class="_row" >
             <th class="edge top-left"></th>
-            <th class="_date" >THỨ HAI</th>
-            <th class="_date" >THỨ BA</th>
-            <th class="_date" >THỨ TƯ</th>
-            <th class="_date" >THỨ NĂM</th>
-            <th class="_date" >THỨ SÁU</th>
-            <th class="_date" >THỨ BẢY</th>
-            <th class="_date" >CHỦ NHẬT</th>
+            <th class="_date" *ngFor="let date of listDates">{{date}}</th>
             <th class="edge top-right" ></th>
         </tr>
     </thead>
     <tbody>
-        <tr class="_row">
-            <td class="_period">Tiết 1</td>
-            <td id="block" class="_content" rowspan="" >
-                <table class="_text">   
-                        <tr>
-                            <td>
-                                <span>E-Logistics in Supply Chain Management</span>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <span style="font-weight: bold; color:#212529;">Phòng:</span>
-                                <span>A2.301</span>
-                            </td>
-                        </tr>
-                </table>
+        <tr class="_row" *ngFor="let period of listPeriods">
+            <td class="_period">{{period}}</td>
+            <td class="_content" *ngFor="let content of listContents">{{content}}
+                
             </td>
-            <td class="_content"></td>
-            <td class="_content"></td>
-            <td class="_content"></td>
-            <td class="_content"></td>
-            <td class="_content"></td>
-            <td class="_content"></td>
-            <td class="_period">Tiết 1</td>
-        </tr>
-        <tr class="_row">
-            <td class="_period">Tiết 2</td>
-            <td class="_content"></td>
-            <td class="_content"></td>
-            <td class="_content"></td>
-            <td class="_content"></td>
-            <td class="_content"></td>
-            <td class="_content"></td>
-            <td class="_content"></td>
-            <td class="_period">Tiết 2</td>
-        </tr>
-        <tr class="_row">
-            <td class="_period">Tiết 3</td>
-            <td class="_content"></td>
-            <td class="_content"></td>
-            <td class="_content"></td>
-            <td class="_content"></td>
-            <td class="_content"></td>
-            <td class="_content"></td>
-            <td class="_content"></td>
-            <td class="_period">Tiết 3</td>
-        </tr>
-        <tr class="_row">
-            <td class="_period">Tiết 4</td>
-            <td class="_content"></td>
-            <td class="_content"></td>
-            <td class="_content"></td>
-            <td class="_content"></td>
-            <td class="_content"></td>
-            <td class="_content"></td>
-            <td class="_content"></td>
-            <td class="_period">Tiết 4</td>
-        </tr>
-        <tr class="_row">
-            <td class="_period">Tiết 5</td>
-            <td class="_content"></td>
-            <td class="_content"></td>
-            <td class="_content"></td>
-            <td class="_content"></td>
-            <td class="_content"></td>
-            <td class="_content"></td>
-            <td class="_content"></td>
-            <td class="_period">Tiết 5</td>
-        </tr>
-        <tr class="_row">
-            <td class="_period">Tiết 6</td>
-            <td class="_content"></td>
-            <td class="_content"></td>
-            <td class="_content"></td>
-            <td class="_content"></td>
-            <td class="_content"></td>
-            <td class="_content"></td>
-            <td class="_content"></td>
-            <td class="_period">Tiết 6</td>
-        </tr>
-        <tr class="_row">
-            <td class="_period">Tiết 7</td>
-            <td class="_content"></td>
-            <td class="_content"></td>
-            <td class="_content"></td>
-            <td class="_content"></td>
-            <td class="_content"></td>
-            <td class="_content"></td>
-            <td class="_content"></td>
-            <td class="_period">Tiết 7</td>
-        </tr>
-        <tr class="_row">
-            <td class="_period">Tiết 8</td>
-            <td class="_content"></td>
-            <td class="_content"></td>
-            <td class="_content"></td>
-            <td class="_content"></td>
-            <td class="_content"></td>
-            <td class="_content"></td>
-            <td class="_content"></td>
-            <td class="_period">Tiết 8</td>
-        </tr>
-        <tr class="_row">
-            <td class="_period">Tiết 9</td>
-            <td class="_content"></td>
-            <td class="_content"></td>
-            <td class="_content"></td>
-            <td class="_content"></td>
-            <td class="_content"></td>
-            <td class="_content"></td>
-            <td class="_content"></td>
-            <td class="_period">Tiết 9</td>
-        </tr>
-        <tr class="_row">
-            <td class="_period">Tiết 10</td>
-            <td class="_content"></td>
-            <td class="_content"></td>
-            <td class="_content"></td>
-            <td class="_content"></td>
-            <td class="_content"></td>
-            <td class="_content"></td>
-            <td class="_content"></td>
-            <td class="_period">Tiết 10</td>
+            <td class="_period">{{period}}</td>
         </tr>
     </tbody>
     <tfoot>
         <tr class="_row">
             <td class="edge bottom-left"></td>
-            <td class="_date" >THỨ HAI</td>
-            <td class="_date" >THỨ BA</td>
-            <td class="_date" >THỨ TƯ</td>
-            <td class="_date" >THỨ NĂM</td>
-            <td class="_date" >THỨ SÁU</td>
-            <td class="_date" >THỨ BẢY</td>
-            <td class="_date" >CHỦ NHẬT</td>
+            <td class="_date" *ngFor="let date of listDates">{{date}}</td>
             <td class="edge bottom-right"></td>
         </tr>
     </tfoot>
