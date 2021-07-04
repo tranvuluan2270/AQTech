@@ -19,8 +19,9 @@ export class SemesterMarkComponent implements OnInit {
     let Mssv = value.mssv;
     let Nhhk = value.nhhk;
 
-    this.SemesterMark.getData(Mssv,Nhhk).subscribe(listData=>{
-      this.Data=listData;
+    this.SemesterMark.getData(Mssv,Nhhk).subscribe(Data=>{
+      this.listData=Data;
+      console.log();
     })
   }
 }

@@ -37,9 +37,8 @@ export class TimetableComponent implements OnInit {
     let Mssv = value.mssv;
     let TuNgay = value.tungay;
 
-    this.Timetable.getData(Mssv,TuNgay).subscribe(listData=>{
-    this.Data=listData;
-    console.log(listData);
+    this.Timetable.getData(Mssv,TuNgay).subscribe(Data=>{
+    this.listData=Data;
     })
   }
 
