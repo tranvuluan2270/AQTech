@@ -9,7 +9,7 @@ export class ExamScheduleComponent implements OnInit {
   constructor(private ExamSchedule:ExamScheduleService){}
   ngOnInit(): void {}
 
-  Data:any=[];
+  data:any=[];
   listData:any=[];
   semesters:any=[
     {placeholder:'Học kỳ 1 - Năm học 2020-2021', value:'20201'},
@@ -21,8 +21,8 @@ export class ExamScheduleComponent implements OnInit {
     let Mssv = value.mssv;
     let Nhhk = value.nhhk;
 
-    this.ExamSchedule.getData(Mssv,Nhhk).subscribe(Data=>{
-    this.listData=Data; 
+    this.ExamSchedule.getData(Mssv,Nhhk).subscribe(data=>{
+    this.listData=data; 
     })
   }
 }

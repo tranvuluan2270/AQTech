@@ -35,35 +35,38 @@
         </div>
     </div>
 </div>
-<div class="_table">
-    <table class="table table-bordered table-sm table-info">
-        <thead class="table-dark">
-        <tr>
-            <th scope="col">Mã Môn Học</th>
-            <th scope="col">Tên Môn Học</th>
-            <th scope="col">Số Tín Chỉ</th>
-            <th scope="col">Điểm Kiểm Tra 1</th>
-            <th scope="col">Điểm Kiểm Tra 2</th>
-            <th scope="col">Điểm Thi</th>
-            <th scope="col">Loại</th>
-            <th scope="col">Điểm Hệ Số 4</th>
-            <th scope="col">Đạt Môn</th>
-        </tr>
-        </thead>
-        <tbody>
-          <tr *ngFor="let data of listData">
-            <th scope="row">{{data.ma_mon_hoc}}</th>
-            <td>{{data.ten_mon_hoc}}</td>
-            <td>{{data.so_tc}}</td>
-            <td>{{data.diem_kt_1}}</td>
-            <td>{{data.diem_kt_2}}</td>
-            <td>{{data.diem_thi}}</td>
-            <td>{{data.loai}}</td>
-            <td>{{data.diem_he_so_4}}</td>
-            <td>{{data.dat_mon}}</td>
-        </tr>     
-        </tbody>   
-    </table>
+
+<div class="container">
+    <div class="_table">
+        <table class="table table-bordered table-sm table-info">
+            <thead class="table-dark">
+            <tr>
+                <th>Mã Môn Học</th>
+                <th>Tên Môn Học</th>
+                <th>Số Tín Chỉ</th>
+                <th>Điểm Kiểm Tra 1</th>
+                <th>Điểm Kiểm Tra 2</th>
+                <th>Điểm Thi</th>
+                <th>Loại</th>
+                <th>Điểm Hệ Số 4</th>
+                <th>Đạt Môn</th>
+            </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let data of listData">
+                <th>{{data.ma_mon_hoc}}</th>
+                <td>{{data.ten_mon_hoc}}</td>
+                <td>{{data.so_tc}}</td>
+                <td>{{data.diem_kt_1}}</td>
+                <td>{{data.diem_kt_2}}</td>
+                <td>{{data.diem_thi}}</td>
+                <td>{{data.loai}}</td>
+                <td>{{data.diem_he_so_4}}</td>
+                <td>{{data.dat_mon}}</td>
+            </tr>     
+            </tbody>   
+        </table>
+    </div>
 </div>
 
 

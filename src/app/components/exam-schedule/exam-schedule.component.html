@@ -37,40 +37,43 @@
         </div>
     </div>
 </div>
-<div class="_table">
-    <table class="table table-bordered table-sm table-info">
-        <thead class="table-dark">
-        <tr>
-            <th scope="col">Mã Môn Học</th>
-            <th scope="col">Tên Môn Học</th>
-            <th scope="col">Mã Phòng</th>
-            <th scope="col">Tên Phòng</th>
-            <th scope="col">Giờ Bắt Đầu</th>
-            <th scope="col">Số Phút</th>
-            <th scope="col">Tiết Bắt Đầu</th>
-            <th scope="col">Số Tiết</th>
-            <th scope="col">Hình Thức</th>
-            <th scope="col">Tổ Thi</th>
-            <th scope="col">Nhóm Thi</th>
-            <th scope="col">Ngày Thi</th>
-        </tr>
-        </thead>
-        <tbody>
-          <tr *ngFor="let data of listData">
-            <th scope="row">{{data.ma_mon_hoc}}</th>
-            <td>{{data.ten_mon_hoc}}</td>
-            <td>{{data.ma_phong}}</td>
-            <td>{{data.ten_phong}}</td>
-            <td>{{data.gio_bat_dau}}</td>
-            <td>{{data.so_phut}}</td>
-            <td>{{data.tiet_bat_dau}}</td>
-            <td>{{data.so_tiet}}</td>
-            <td>{{data.hinh_thuc}}</td>
-            <td>{{data.to_thi}}</td>
-            <td>{{data.nhom_thi}}</td>
-            <td>{{data.ngay_thi}}</td>   
-        </tr>     
-        </tbody>      
-    </table>
+
+<div class="container">
+    <div class="_table">
+        <table class="table table-bordered table-sm table-info">
+            <thead class="table-dark">
+            <tr>
+                <th>Mã Môn Học</th>
+                <th>Tên Môn Học</th>
+                <th>Mã Phòng</th>
+                <th>Tên Phòng</th>
+                <th>Giờ Bắt Đầu</th>
+                <th>Số Phút</th>
+                <th>Tiết Bắt Đầu</th>
+                <th>Số Tiết</th>
+                <th>Hình Thức</th>
+                <th>Tổ Thi</th>
+                <th>Nhóm Thi</th>
+                <th>Ngày Thi</th>
+            </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let data of listData">
+                <th>{{data.ma_mon_hoc}}</th>
+                <td>{{data.ten_mon_hoc}}</td>
+                <td>{{data.ma_phong}}</td>
+                <td>{{data.ten_phong}}</td>
+                <td>{{data.gio_bat_dau}}</td>
+                <td>{{data.so_phut}}</td>
+                <td>{{data.tiet_bat_dau}}</td>
+                <td>{{data.so_tiet}}</td>
+                <td>{{data.hinh_thuc}}</td>
+                <td>{{data.to_thi}}</td>
+                <td>{{data.nhom_thi}}</td>
+                <td>{{data.ngay_thi}}</td>   
+            </tr>     
+            </tbody>      
+        </table>
+    </div>
 </div>
 

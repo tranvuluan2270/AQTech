@@ -1,3 +1,4 @@
+
 <div class="inputs">
     <form class="row" #Form="ngForm" (ngSubmit)="getInputs(Form.value)">
             <input
@@ -54,29 +55,86 @@
     </div>
 </div>
 
+<div class="container">
 
-<table class="timetable" >
-    <thead>
-        <tr class="_row" >
-            <th class="edge top-left"></th>
-            <th class="_date" *ngFor="let date of listDates">{{date}}</th>
-            <th class="edge top-right" ></th>
+    <table class="week-timetable" >
+        <thead>
+            <tr class="_row" >
+                <th class="edge top-left"></th>
+                <th class="_date" *ngFor="let date of listDates">{{date}}</th>
+                <th class="edge top-right"></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr class="_row" *ngFor="let period of listPeriods">
+                <td class="_period">{{period}}</td>
+                <td class="_content" *ngFor="let content of listContents; let j = index" >
+                    <table class="_text" *ngFor="let data of listData;let i = index ">
+                        <tbody>
+                            <tr *ngIf="j == i">
+                                <td >
+                                    <span>{{listData[j].ten_mon_hoc}}</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td  *ngIf="j == i">
+                                    <span style="font-weight: bold; color: black;">Phòng:</span>
+                                    <span>{{listData[j].ma_phong}}</span>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </td>
+                <td class="_period">{{period}}</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr class="_row">
+                <td class="edge bottom-left"></td>
+                <td class="_date" *ngFor="let date of listDates">{{date}}</td>
+                <td class="edge bottom-right"></td>
+            </tr>
+        </tfoot>
+    </table>
+
+    <!-- <table class="personal-timetable table table-bordered table-sm table-info caption-top">
+        <caption>Thời Khóa Biểu Cá Nhân</caption>
+        <thead class="table-dark">
+        <tr>
+            <th>Thứ</th>
+            <th>Tiết</th>
+            <th>Tên Môn Học</th>
+            <th>Mã Môn Học</th>
+            <th>Tên Phòng Học</th>
+            <th>Mã Phòng Học</th>
+            <th>Lớp</th>
+            <th>Ngày Học</th>
+            <th>Năm Học</th>
+            <th>Học Kỳ</th>
+            <th>Số Tín Chỉ</th>
+            <th>Số Tín Chỉ HP</th>
+            <th>Nhóm Học</th>
+            <th>Tổ Thực Hành</th>
         </tr>
-    </thead>
-    <tbody>
-        <tr class="_row" *ngFor="let period of listPeriods">
-            <td class="_period">{{period}}</td>
-            <td class="_content" *ngFor="let content of listContents">{{content}}
-                
-            </td>
-            <td class="_period">{{period}}</td>
-        </tr>
-    </tbody>
-    <tfoot>
-        <tr class="_row">
-            <td class="edge bottom-left"></td>
-            <td class="_date" *ngFor="let date of listDates">{{date}}</td>
-            <td class="edge bottom-right"></td>
-        </tr>
-    </tfoot>
-</table>
+        </thead>
+        <tbody>
+          <tr *ngFor="let data of listData">
+            <th scope="row">{{data.thu}}</th>
+            <td>{{data.tiet}}</td>
+            <td>{{data.ten_mon_hoc}}</td>
+            <td>{{data.ma_mon_hoc}}</td>
+            <td>{{data.ten_phong}}</td>
+            <td>{{data.ma_phong}}</td>
+            <td>{{data.lop}}</td>
+            <td>{{data.ngay_hoc}}</td>
+            <td>{{data.nam_hoc}}</td>
+            <td>{{data.hoc_ky}}</td>
+            <td>{{data.so_tc}}</td>
+            <td>{{data.so_tc_hp}}</td>
+            <td>{{data.nhom_hoc}}</td>
+            <td>{{data.nhom_thuc_hanh}}</td>
+        </tr>     
+        </tbody>   
+    </table> -->
+</div>
+

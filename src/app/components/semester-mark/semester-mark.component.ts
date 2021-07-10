@@ -11,7 +11,7 @@ export class SemesterMarkComponent implements OnInit {
   constructor(private SemesterMark:SemesterMarkService){}
   ngOnInit(): void {}
 
-  Data:any=[];
+  data:any=[];
   listData:any=[];
 
   getInputs(value:any)
@@ -19,9 +19,8 @@ export class SemesterMarkComponent implements OnInit {
     let Mssv = value.mssv;
     let Nhhk = value.nhhk;
 
-    this.SemesterMark.getData(Mssv,Nhhk).subscribe(Data=>{
-      this.listData=Data;
-      console.log();
+    this.SemesterMark.getData(Mssv,Nhhk).subscribe(data=>{
+      this.listData=data;
     })
   }
 }

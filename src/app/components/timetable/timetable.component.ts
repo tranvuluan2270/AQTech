@@ -9,13 +9,12 @@ import {TimetableService} from '../../services/timetable/timetable.service';
 export class TimetableComponent implements OnInit {
   constructor(private Timetable:TimetableService){}
   ngOnInit(): void {}
-
-  Data:any=[];
+  data:any=[];
   listData:any=[];
   listDates : String[] = ["THỨ HAI", "THỨ BA", "THỨ TƯ", "THỨ NĂM", "THỨ SÁU", "THỨ BẢY", "CHỦ NHẬT"];
-  listPeriods : String[] = ["Tiết 1", "Tiết 2", "Tiết 3", "Tiết 4", "Tiết 5","Tiết 6", "Tiết 7", "Tiết 8", "Tiết 9", "Tiết 10"];
+  listPeriods : String[] = ["Tiết 1", "Tiết 2", "Tiết 3", "Tiết 4", "Tiết 5","Tiết 6", "Tiết 7", "Tiết 8", "Tiết 9"];
   listContents: String[]= ["","","","","","",""];
-
+  
   semesters:any=[
     {placeholder:'Học kỳ 1 - Năm học 2020-2021', value:'20201'},
     {placeholder:'Học kỳ 2 - Năm học 2020-2021', value:'20202'},
@@ -37,8 +36,8 @@ export class TimetableComponent implements OnInit {
     let Mssv = value.mssv;
     let TuNgay = value.tungay;
 
-    this.Timetable.getData(Mssv,TuNgay).subscribe(Data=>{
-    this.listData=Data;
+    this.Timetable.getData(Mssv,TuNgay).subscribe(data=>{
+      this.listData = data;
     })
   }
 
